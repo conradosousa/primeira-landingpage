@@ -7,7 +7,25 @@
     <title>Dani Bastos Brownie</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <style>
+        .swiper {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            margin: auto;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+        }
+
         body {
             margin: 0;
             font-family: 'Open Sans', sans-serif;
@@ -26,6 +44,28 @@
             color: white;
             padding: 2rem;
         }
+
+        .slogan-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            border-radius: 16px;
+            max-width: 90%;
+        }
+
+        .slogan-container h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .slogan-container p {
+            font-size: 1.3rem;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            margin-bottom: 2rem;
+        }
+
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
@@ -92,11 +132,14 @@
 
 <body>
     <div class="hero">
-        <h1>Dani Bastos Brownies & Doces</h1>
-        <p>Delícias artesanais feitas com amor para adoçar seus melhores momentos.</p>
-        <a class="btn" href="https://wa.me/5585985035891?text=Ol%C3%A1!%20gostaria%20de%20fazer%20um%20pedido."
-            target="_blank">FAÇA SEU PEDIDO</a>
+        <div class="slogan-container">
+            <h1>Dani Bastos Brownies & Doces</h1>
+            <p>Delícias artesanais feitas com amor para adoçar seus melhores momentos.</p>
+            <a class="btn" href="https://wa.me/5585985035891?text=Ol%C3%A1!%20gostaria%20de%20fazer%20um%20pedido."
+                target="_blank">FAÇA SEU PEDIDO</a>
+        </div>
     </div>
+
 
     <section>
         <h2>Nossos Produtos</h2>
@@ -109,21 +152,21 @@
 
     <section>
         <h2>Galeria de Delícias</h2>
-        <div class="galeria">
-            <img src="imagem/brownie.jpeg"
-                alt="Brownie artesanal">
-            <img src="imagem/bolo.jpeg"
-                alt="Bolo decorado">
-            <img src="imagem/pipoca.jpeg"
-                alt="Pipoca gourmet">
-                <img src="imagem/brigadeiro.jpeg"
-                alt="Brigadeiro gourmet">
-            <img src="imagem/bolo2.jpeg"
-                alt="Naked Cake">
-            <img src="imagem/cupcakc.jpeg"
-                alt="Cupcake">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="imagem/brownie.jpeg" alt="Brownie artesanal"></div>
+                <div class="swiper-slide"><img src="imagem/bolo.jpeg" alt="Bolo decorado"></div>
+                <div class="swiper-slide"><img src="imagem/pipoca.jpeg" alt="Pipoca gourmet"></div>
+                <div class="swiper-slide"><img src="imagem/brigadeiro.jpeg" alt="Brigadeiro gourmet"></div>
+                <div class="swiper-slide"><img src="imagem/bolo2.jpeg" alt="Naked Cake"></div>
+                <div class="swiper-slide"><img src="imagem/cupcakc.jpeg" alt="Cupcake"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </section>
+
 
     <section>
         <h2>🎉 Para Todas as Ocasiões</h2>
@@ -136,7 +179,7 @@
 
             <input type="text" name="nome" placeholder="Seu nome" required>
             <input type="tel" name="telefone" placeholder="WhatsApp" required>
-            <textarea name="mensagem" rows="4" placeholder="Quero encomendar..." required></textarea>
+            <textarea name="mensagem" rows="4" placeholder="Quero comprar..." required></textarea>
             <button type="submit" class="submit-btn">Enviar Pedido</button>
         </form>
     </section>
@@ -151,5 +194,25 @@
         <p>&copy; 2025 Dani Bastos Brownie | Todos os direitos reservados.</p>
     </footer>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    const swiper = new Swiper(".mySwiper", {
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+    });
+</script>
+
 
 </html>
